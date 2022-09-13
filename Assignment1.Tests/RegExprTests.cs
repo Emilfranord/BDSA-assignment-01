@@ -30,4 +30,52 @@ public class RegExprTests
         counter.Should().Be(19);
         //output.Should().AllBe("");
     }
+
+    [Fact]
+    public void resolution_given_some_input_return_stream()
+    {
+        // Given
+        List<string> input = new List<string>();
+        input.Add("1920x1080");
+        
+        
+        // When
+        var output = RegExpr.Resolution(input);
+    
+
+        // Then
+        output.Count().Should().Be(1);
+        foreach (var item in output)
+        {
+            item.width.Should().Be(1920);
+            item.height.Should().Be(1080);
+        }
+        
+    }
+
+    [Fact]
+    public void resolution_given_multiple_inputs_return_stream()
+    {
+        // Given
+        List<string> input = new List<string>();
+        input.Add("1920x1080 !!1920x1080");
+        input.Add("1920x1080");
+        
+        
+        
+        // When
+        var output = RegExpr.Resolution(input);
+    
+
+        // Then
+        output.Count().Should().Be(3);
+        foreach (var item in output)
+        {
+            item.width.Should().Be(1920);
+            item.height.Should().Be(1080);
+        }
+        
+    }
+
+    
 }
