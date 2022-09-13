@@ -1,0 +1,66 @@
+\section{Exercise 1}
+\paragraph{Nouns and verbs}
+The following lists are of nouns and verbs, that appear in the specification.
+
+Nouns:
+\begin{enumerate}
+	\item version control system
+	\item changes
+	\item files
+	\item set of files
+	\item time
+	\item specific versions
+	\item system
+	\item source code
+	\item configuration data
+	\item diagrams
+	\item binaries
+	\item state
+	\item project
+	\item changes
+	\item problem
+	\item issue
+\end{enumerate}
+
+Verbs:
+\begin{enumerate}
+	\item want
+	\item records 
+	\item can recall
+	\item work
+	\item revert
+	\item compare
+	\item see
+	\item modify
+	\item introduce
+\begin{enumerate}
+
+\paragraph{Domain}
+The majority of the words belong to the technical domain.
+Several of the nouns only exist in the IT technical domain, such as 'source code', and 'binaries'.
+Other words come form the technical world in a less direct way.
+
+Some of the verbs that are used, relate to the concept of time.
+Especially 'revert' and 'recall' belong to the time domain.
+
+All together the words belong to the domain of version control systems.
+
+\paragraph{libgit2sharp}
+While libgit2sharp does not have classes representing 'File' or 'State', it still functions as a version control system.
+This is possible since the architecture of the program does not demand it.
+Instead of files, this implementation tracks 'GitObject' instances, be they files or something else.
+That way libgit2sharp, can still track the changes to files, and other data that needs to be tracked.
+This design was probably used to abstract the implementation away from specific files and data structures.
+
+In this design there is not a 'state', because it is an emergent property of the system.
+That is, the state of the system at any given time is defined by the state of the objects, not a single object.
+This was there is no need for a class to handle the state of files, commits or similar, since that is handled inside the object instances themselves.
+
+
+
+
+% Use the noun/verb technique from "Objects First with Java: A Practical Introduction Using BlueJ" chapter 15, 
+% to analyze the given description.
+% Explain in which domain nouns and verbs that you identified are located.
+% The implementation in libgit2sharp does neither contain a class File nor a class State. 
+% Explain how that can be when libgit2sharp is an implementation of Git which is certainly a version control system as described above.
