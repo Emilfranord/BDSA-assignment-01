@@ -48,5 +48,23 @@ public static class RegExpr
     }
 
     
-    public static IEnumerable<(Uri url, string title)> Urls(string html) => throw new NotImplementedException();
+    public static IEnumerable<(Uri url, string title)> Urls(string html){
+        string pattern = @"<(?<tag>a) (href=""(?<url>.*?)"")? *(title=""(?<title>.*?)"")?.*?>(?<text>.*?)</\k<tag>";
+        foreach (Match item in Regex.Matches(html, pattern))
+        {
+            var url = item.Groups["url"];
+            var title = item.Groups["title"];
+            var text = item.Groups["text"];
+            if (url.Success && title.Success)
+            {
+                yield return (new Uri(url.Value), title.Value);
+            }else if(url.Success)
+            {
+                yield return (new Uri(url.Value), "");
+            } else
+            {
+                yield return  (new Uri ("https://www.google.dk/"), text.Value);
+            }
+        }
+    }
 }
