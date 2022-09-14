@@ -1,5 +1,7 @@
 \section{Exercise 4}
 Three systems will be compared, namely the Coronapas App, Git, and a Insulin pump control system.
+Most of this will be hearsay and conjecture, as it is impossible to know the thoughts of the businesses and stakeholdes of the three organisations. 
+In a perfect world, all software would fulfill all of the four quality attributes, but that is not the case.
 
 \subsection{Dependability}
 % Coronapas App
@@ -8,6 +10,9 @@ Three systems will be compared, namely the Coronapas App, Git, and a Insulin pum
 
 % Insulin pump control system
 
+% Software dependability includes a range of characteristics including reliability, security, and safety. 
+% Dependable software should not cause physical or economic damage in the event of system failure. 
+
 \subsection{Security}
 Clearly all of the systems need to be secure.
 For the Coronapas App, missing secutity could allow malicious actors to get hold of peoples health data, or allow a malicious actor to have a fake clearence.
@@ -15,19 +20,38 @@ This would be problematic for the customer, the danish government.
 For git, it could cause publication or changes to code repos, or other files tracked via it.
 The Insulin pump control system, too needs to be kept secure from outside interferance.
 Not doing so could cause the system to deliver too much insulin to the end user, killing them.
+As such, this system is safety-critical
 
-Sometimes security for embeded systems, and systems that are not connected to othes, is not prioritized.
-This could be the case for the Insulin pump control system, with the argument that there are no obvious attack vectors.
-Hence the business of The Insulin pump control system might not put an emphasis on security.
+% Sometimes security for embeded systems, and systems that are not connected to othes, is not prioritized.
+% This could be the case for the Insulin pump control system, with the argument that there are no obvious attack vectors.
+% Hence the business of The Insulin pump control system might not put an emphasis on security.
+% This is a hyphothetical, because this system is safety-critical.
 
 
 \subsection{Efficiency}
-% Coronapas App
+It is important that all three systems operate efficiently, and use as few resources and as little time as possible.
 
-% Git
+% Coronapas App
+The Coronapas App is often run of phones, that have a lot of resources available, and is only used for a short while for each use.
+So efficiency is less of a consern to the buisniss, since even if it hogs resources, they will be released quickly.
+
+
+%Git
+Git has a high requrements for efficiency, because of its usecase.
+Since git was originally build to facilitate the development of the linux kernel, it would have a lot of users working on the same code repo.
+As such many people would need to be kept in synchronization often.
+Hence git needs to be fast to avoid waittimes, for its users.
 
 % Insulin pump control system
+In order to make the Insulin pump control system affordable, it needs to be as simple and cheap as possible.
+Cheaper hardware often has fewer resources to work with.
+Hence it needs to be efficient with the resources it has.
+On the other hand, insulin is not a time sentitive drug in the order of seconds.
+That is to say, it does not matter if the control system takes, $10^{-9}$ or $10^{-7}$ seconds to calculate something.
+It matters that pump is controlled, not how fast.
 
+% Software should not make wasteful use of system resources such as memory and processor cycles. 
+% Efficiency therefore includes responsiveness, processing time, resource utilization, etc.
 
 
 \subsection{Maintainability}
