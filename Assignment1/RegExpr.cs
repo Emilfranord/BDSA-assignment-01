@@ -1,5 +1,6 @@
 namespace Assignment1;
 using System.Text.RegularExpressions;
+using System.Text;
 public static class RegExpr
 {
     private static List<string> toWord(string str)
@@ -37,5 +38,15 @@ public static class RegExpr
 
     }
 
-    public static IEnumerable<string> InnerText(string html, string tag) => throw new NotImplementedException();
+    public static IEnumerable<string> InnerText(string html, string tag){
+        var pattern = String.Format("<(?<tag>{0}).*?>(?<text>.*?)</\\k<tag>", tag);
+        
+            foreach (Match item in Regex.Matches(html, pattern))
+            {
+                yield return item.Groups["text"].Value;
+            }
+    }
+
+    
+    public static IEnumerable<(Uri url, string title)> Urls(string html) => throw new NotImplementedException();
 }
