@@ -1,15 +1,18 @@
+\section{Exercise-6}
 
+``Kodefejl i Sundhedsplatformen: Fem patienter har fået forkert dosis medicin''
 
-"Kodefejl i Sundhedsplatformen: Fem patienter har fået forkert dosis medicin"
 1.
 This article describes the reasons for the issue was due to codechanges
 that lead to unintentional changes in the already implemented system FMK.
+
 2. 
 In order to accomodate the issue described above, it would seem obvious to initiate some procedures that ensures that code changes does not interfere with the dataintegrity.\\
 Practically this would include, but not restricted to:
 Thorough testing of the changes
 Peer-Rewieving
 Maybe running a beta version on a representive test-group
+
 3.
 The solutions presented above coincides with the somewhat vague solutions described in the article.
 The article proposed that a procces is developed that ensures that no changes in "Sundhedsplatformen" can be deployed without ensuring that it does not interfere with other\\
@@ -17,10 +20,11 @@ already integrated systems.
 In conclusion a combination of solutions described in 2 and 3 would seem appropriate since it accomodates the need described in the article.
 
 
-"Softwareproblemer skadede mere end 100 patienter på amerikansk hospital"
+``Softwareproblemer skadede mere end 100 patienter på amerikansk hospital''
 1.
 This article pictures does not really describe an issue.
 It moreso argues that the implementation of the system, specifically the "Unknown Queue" has been done without much thought on the domain in where its used.
+
 2.
 In order so solve the issue above the system developers should definately remove the possibillity of anything going into the "unknown queue".
 When any form is filled incorrectly it should be prompted to the user so they can fill it properly. A form should be submittable unless it is filled correctly.
