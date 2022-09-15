@@ -1,0 +1,41 @@
+
+
+"Kodefejl i Sundhedsplatformen: Fem patienter har fået forkert dosis medicin"
+1.
+This article describes the reasons for the issue was due to codechanges
+that lead to unintentional changes in the already implemented system FMK.
+2. 
+In order to accomodate the issue described above, it would seem obvious to initiate some procedures that ensures that code changes does not interfere with the dataintegrity.\\
+Practically this would include, but not restricted to:
+Thorough testing of the changes
+Peer-Rewieving
+Maybe running a beta version on a representive test-group
+3.
+The solutions presented above coincides with the somewhat vague solutions described in the article.
+The article proposed that a procces is developed that ensures that no changes in "Sundhedsplatformen" can be deployed without ensuring that it does not interfere with other\\
+already integrated systems.
+In conclusion a combination of solutions described in 2 and 3 would seem appropriate since it accomodates the need described in the article.
+
+
+"Softwareproblemer skadede mere end 100 patienter på amerikansk hospital"
+1.
+This article pictures does not really describe an issue.
+It moreso argues that the implementation of the system, specifically the "Unknown Queue" has been done without much thought on the domain in where its used.
+2.
+In order so solve the issue above the system developers should definately remove the possibillity of anything going into the "unknown queue".
+When any form is filled incorrectly it should be prompted to the user so they can fill it properly. A form should be submittable unless it is filled correctly.
+
+
+3.
+The article presents a temporary solution which consists of manually managing the "unknown queue" which seems to solve the issue for now, but is definately not a long-term solution.\\
+The article presents the long term solution to be more notifications and better automatisation. More notifications coincide with the solution described above.\\
+However the concept of the "unknown queue" seems to be able to cause major faults which is why we, as software engineers, think it should be removed.
+In conclusion the approach we would recommend would be to work closely with an expert of the field domain in order to understand it properly.
+In addition the possibillity of forms ending in the unknown queue should be removed.
+
+
+4.
+When developing systems in the healthcare systems some dilemmas come to light. It is of the essence to think about flaws in the software as being potentially life threatening.\\
+If you develop a tool for a firm to help them track employer performance, if anything goes wrong, noone dies as a direct result of that.
+However in these two cases it might just have been that someone had suffered servere physical nuisance.\\
+When developing software for the healtcare system, you should always be aware that consequences of flaws might not only result in loss of money.
